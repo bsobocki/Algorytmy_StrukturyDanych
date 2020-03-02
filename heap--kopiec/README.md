@@ -2,7 +2,7 @@
 
 ## Motywacja
 
-Potrzebna nam kolejnka priorytetowa - struktura danych, która będzie zachowywała porządek względem ustalonego kryterium 
+Potrzebna nam kolejka priorytetowa - struktura danych, która będzie zachowywała porządek względem ustalonego kryterium 
 (na przykład kolejka priorytetowa przechowująca liczby całkowite, zwracająca przy operacji `pop` najmniejszą z dostępnych liczb)
 
 ## Drzewo
