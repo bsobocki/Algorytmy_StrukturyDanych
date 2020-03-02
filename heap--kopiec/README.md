@@ -9,7 +9,7 @@ Pobierany element za pomocą operacji `pop` to element z korzenia kopca.
 
 ### Przykład
 
-Kolejka priorytetowa z posortowanymi rosnąco elementami:
+Kolejka priorytetowa z posortowanymi rosnąco elementami:  
 **Możliwa Implementacja:** `Kopiec MIN` - korzeń drzewa jest najmniejszym elementem w strukturze.   
 
 ___WAŻNE___  
@@ -22,10 +22,11 @@ Kopiec to kopiec :)
 Korzeń jest jednym z przykłądów **drzewa binarnego**.  
 
 Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz conajwyżej dwóch synów: lewego i prawego.  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_root.png/>
 
 Każdy wierzchołek i jego całe potomstwo - synowie synów, ich synowie, synowie tych synów synów synów itd. tworzą poddrzewo, które również jest kopcem.  
 
-Kopiec uzupełniany jest ***`w dół od lewej strony do prawej`*** (dodawanie ukazane poniżej oraz w pliku [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.pn) ).  
+Kopiec uzupełniany jest ***`w dół od lewej strony do prawej`*** (dodawanie ukazane poniżej oraz w pliku [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png) ).  
 
 Przykładwe kopce __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **poprawne** *(oznaczone czerwonym znakiem `V`)*:  
 
