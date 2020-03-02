@@ -33,6 +33,20 @@ Przykładwe kopce __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **pop
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_wrong_and_correct.png"/>
 
+## Implementacja
+
+Chcemy, aby kopiec był jak najbardziej wydajny czasowo i pamięciowo. W związku z tym kopiec powinien opierać się na tablicy.  
+Dostęp do danych węzłów opiera się na dostępie do odpowiednich komórek.  
+Jeśli `i` to indeks wierzchołka wówczas:
+  - `lewy_syn(kopiec, i) => kopiec[ (i+1)*2 - 1 ]`
+  - `prawy_syn(kopiec, i) => kopiec[ (i+1)*2 ]`
+  - `ojciec(kopiec, i) => jeśli i!=0 => kopiec[ (i-1)//2 ]`
+  
+ Gdzie operator `//` oznacza dzielenie całkowite.  
+   
+ Mała wizualizacja:  
+ <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_array.png" />
+
 ## Porządek Kopcowy
 
 Każdy kopiec jest zaprojektowany według porządku kopcowego.  
