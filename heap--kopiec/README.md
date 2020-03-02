@@ -12,6 +12,14 @@ Kopiec to kopiec :)
 
 ## Drzewo
 
+Przykładwe drzewa __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **poprawne** *(oznaczone czerwonym znakiem `V`)*:  
+
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_wrong_and_correct.png"/>
+
+## Operacje 
+
+### Insert
 Dodawanie elementów do kopca:
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png"/>
