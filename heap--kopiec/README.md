@@ -2,8 +2,13 @@
 
 ## Motywacja
 
-Potrzebna nam kolejka priorytetowa - struktura danych, która będzie zachowywała porządek względem ustalonego kryterium 
+Potrzebna nam __kolejka priorytetowa__ - struktura danych, która będzie zachowywała porządek względem ustalonego kryterium 
 (na przykład kolejka priorytetowa przechowująca liczby całkowite, zwracająca przy operacji `pop` najmniejszą z dostępnych liczb)
+
+___WAŻNE___  
+
+Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
+Kopiec to kopiec :)
 
 ## Drzewo
 
