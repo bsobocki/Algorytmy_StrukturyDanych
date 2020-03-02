@@ -12,10 +12,10 @@ Pobierany element za pomocą operacji `pop` to element z korzenia kopca.
 Kolejka priorytetowa z posortowanymi rosnąco elementami:  
 **Możliwa Implementacja:** `Kopiec MIN` - korzeń drzewa jest najmniejszym elementem w strukturze.   
 
-___WAŻNE___  
-
-Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
-Kopiec to kopiec :)
+> ___WAŻNE___  
+> 
+> Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
+> Kopiec to kopiec :)
 
 ## Struktura
 
