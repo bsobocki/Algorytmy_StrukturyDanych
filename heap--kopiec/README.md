@@ -34,7 +34,11 @@ Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz con
 
 Każdy wierzchołek i jego całe potomstwo - synowie synów, ich synowie, synowie tych synów synów synów itd. tworzą poddrzewo, które również jest kopcem.  
 
+
+### Uzupełnianie  
+
 Kopiec uzupełniany jest ***`w dół od lewej strony do prawej`*** (dodawanie ukazane poniżej oraz w pliku [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png) ).  
+Do poziomu **k+1** można dodać element dopiero gdy poziom **k** jest cały zapełniony.  
 
 Przykładwe kopce __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **poprawne** *(oznaczone czerwonym znakiem `V`)*:  
 
