@@ -7,19 +7,27 @@ Potrzebna nam __kolejka priorytetowa__ - struktura danych, która będzie zachow
   
 Pobierany element za pomocą operacji `pop` to element z korzenia kopca.  
 
+.  
+
 ### Przykład
 
-Kolejka priorytetowa z posortowanymi rosnąco elementami:  
-**Możliwa Implementacja:** `Kopiec MIN` - korzeń drzewa jest najmniejszym elementem w strukturze.   
+Kolejka priorytetowa z posortowanymi rosnąco elementami.  
 
-> ___WAŻNE___  
-> 
-> Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
-> Kopiec to kopiec :)
+**Możliwa Implementacja:**  
+    `Kopiec MIN` - korzeń drzewa jest najmniejszym elementem w strukturze.   
 
+.  
+
+___WAŻNE___  
+ 
+ Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
+ Kopiec to kopiec :)
+  
+.  
+  
 ## Struktura
 
-Korzeń jest jednym z przykłądów **drzewa binarnego**.  
+Kopiec jest jednym z przykładów **drzewa binarnego**.  
 
 Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz conajwyżej dwóch synów: lewego (kolor zielony) i prawego (kolor czerwony).  
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_root.png" />
