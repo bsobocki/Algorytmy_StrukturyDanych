@@ -79,9 +79,22 @@ Można zatem zauważyć, ze wtedy **korzeń kopca (root)** ma najmniejszą warto
 ## Operacje 
 
 ### Insert
-Dodawanie elementów do kopca:
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png"/>
+Dodawanie elementów do kopca:  
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png"/>   
 
 Kolorem czerwonym zaznaczony został nowo dodany element.  
 
+Dodawanie polega na włożeniu elementu tak jak zostało to pokazane powyżej, a następnie "przejściu przez drzewo w górę" w celu umiejscowienia dodanego elementu tak, aby został zachwany porządek kopcowy.  
+  
+ Co to oznacza?  
+  
+Dla ułatwienia załóżmy, ze operujemy na `kopcu MIN` *(analogicznie postępujemy na `kopcu MAX`)*.  
+Dodany element zostaje porównywany z ojcem, a następnie, jeśli jego wartość jest mniejsza to zamieniają się miejscami.  
+Następnie element ten, będąc na miejscu swojego poprzedniego ojca jest porównywany i ewentualnie zamieniany z teraźniejszym ojcem.  
+Ta sytuacja powtarza się dopóki syn jest mniejszy od ojca lub dopóki nie dojdzeimy do korzenia, który ojca już nie ma ;_;  
+
+Mały przykład:  
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert_example.png" />
