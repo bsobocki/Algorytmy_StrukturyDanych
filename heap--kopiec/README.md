@@ -55,6 +55,7 @@ Jeśli `i` to indeks wierzchołka wówczas:
   - `ojciec(kopiec, i) => jeśli i!=0 => kopiec[ (i-1)//2 ]`
   
  Gdzie operator `//` oznacza dzielenie całkowite.  
+ Operacje przesunięć bitowych pomogą szybko dostać sie do poszczególnych elementów.   
    
  Mała wizualizacja:  
  <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_array.png" />
@@ -78,6 +79,17 @@ Można zatem zauważyć, ze wtedy **korzeń kopca (root)** ma najmniejszą warto
 
 ## Operacje 
 
+Oznaczymy nasz kopiec MIN jako H.  
+
+### Minimum
+
+```cpp
+  return H[0];
+```
+
+#### Złożoność
+Czas wykonania **stały**  `O(1)`, potrzebujemy tylko dostęu do `H[0]`.  
+
 ### Insert
 
 Dodawanie elementów do kopca:  
@@ -98,3 +110,42 @@ Ta sytuacja powtarza się dopóki syn jest mniejszy od ojca lub dopóki nie dojd
 Mały przykład:  
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert_example.png" />
+
+#### Złożoność
+
+Dodawanie elementu odbywa się w czasie logarytmicznym `O(log n)`, gdzie podstawą logarytmu jest `2`, a `n` oznacza liczbę elementów w kopcu.  
+
+### Przywracanie porządku
+
+Jak powyżej można przeczytać, Kopiec potrzebuje swojego porządku, aby prawidłowo i szybko funkcjonować.  
+
+Przywracanie porządku dla danego elementu `e` polega na sprawdzeniu, czy jest on na odpowiednim miejscu, to znaczy, czy jego ojciec jest od niego mniejszy (działamy na kopcu MIN). Jeśli tak to zamieniamy się miejscami i procedura przywracania porządku wywoływana jest dla `v`, które teraz jest już na miejscu swojego ojca. Idziemy w ten sposób *"do góry"* dopóki każdy kolejny ojciec jest większy lub do korzenia.
+
+Tak przywracamy porządek dla danego `v`. Używamy przywracania porządku w operacjach takich jak ***`insert`***, ***`delete_min`***, czy zmiany wartosci danego wierzchołka (przy zmianie wartości możemy "iść w górę", ale też mozemy "iść w dół", bo wartość może być za duża na swoje miejsce. Warto o tym pamiętać.  
+
+Jednak przywracanie porządku moze dotyczyć nie tylko pojedyńczego elementu, ale o tym za chwilę. ;)  
+
+## Budowanie kopca z dostępnej tablicy
+
+Dobrze. Mamy nasz kopiec, umiemy dodawać do niego elementy metodą ***insert*** oraz pobierać minimalny element i go usuwać za pomocą funkcji ***delete_min***. Jednak dotyczy to sytuacji, w której mamy pusty kopiec i chcemy na nim operować i budować go poprzez wstawianie elementów.  
+
+Musimy jednak wiedzieć, że kopiec da się zbudować z już istniejącej tablicy.  
+
+Jak?  
+
+Tutaj już potrzebne będzie przywrócenie porządku kopcowego.  
+
+Mamy tablicę. Chcemy potraktować ją jako kopiec, ale nie pasuje nam ustawienie jej elementów. Żadnego porządku! (oczywiście mówię o przypadku, w którym elementy w tablicy sa losowe).  
+
+Mówiliśmy wcześniej o tym, że wierzchołek wraz ze swoim potomstwem tworzy poddrzewo, które też ma porządek kopcowy.  
+Zatem może warto zacząć z tej strony?  
+
+Możemy zauważyć, że nasz wierzchołek bez żadnego potomstwa to już drzewo, a nawet jest to kopiec.  
+Zatem potraktujemy jako kopce liście naszego kopca, wierzchołki z najniższego poziomu.  
+
+Wiemy, że ich moze byc nawet połowa wszystkich elementów! 
+
+Dobrze. mamy nasze poddrzewa jednoelementowe. Chcemy dołączyć do nich odpowiadających im ojców. Każdy ojciec ma dwóch synów, więc o ile to możliwe dobieramy w pary sąsiadów i dobieramy ich ojca względem pozycji w tablicy.  
+Nie każdy będzie dobrym ojcem, a więc ten z wierzchołków `v_i-1, v_i` *(i= 1, 2, ..., N)*, którego wartość z nich będzie najmniejsza spośród te trójki wierzchołków (ojciec i synowie), zamieniamy miejscami tak, że teraz ojciec i większy z synów jest synem najmmniejszego z wierzchołków tej trójki.
+
+Krok ten powtarzamy, jednak 
