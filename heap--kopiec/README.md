@@ -176,12 +176,12 @@ Jak powyżej można przeczytać, Kopiec potrzebuje swojego porządku, aby prawid
 Przywracanie porządku dla danego elementu `e` polega na:
 1) "pójściu w górę" :  
   Sprawdzeniu, czy jest on na odpowiednim miejscu, to znaczy, czy jego ojciec jest od niego mniejszy.  
-  Jeśli tak to zamieniamy się miejscami i procedura przywracania porządku wywoływana jest dla `e`, które teraz jest już na miejscu swojego ojca.  
+  Jeśli tak to zamieniają się miejscami i procedura przywracania porządku wywoływana jest dla `e`, które teraz jest już na miejscu swojego ojca.  
   Idziemy w ten sposób *"do góry"* dopóki każdy kolejny ojciec jest większy lub do korzenia.
 
 2) "pójściu w dół" :  
   Sprawdzeniu, który syn jest mniejszy, a następnie czy dany wierzchołek `e` jest mniejszy od mniejszego z nich.  
-  Jeśli jest większy, to zamieniamy ich miejscami. W ten sposób najmniejszy z danej trójki (ojciec i synowie) zostaje ojcem.
+  Jeśli jest większy, to zamieniamy je miejscami. W ten sposób najmniejszy z danej trójki (ojca i synów) zostaje ojcem.
   Idziemy w ten sposób *"w dół"* dopóki któryś z synów będzie mniejszy od danego wierzchołka, lub dopóki nie dojdziemy do najniższego poziomu drzewa.   
   
 Tak przywracamy porządek dla danego `v`. Używamy przywracania porządku w operacjach takich jak ***`insert`***, ***`delete_min`***, czy zmiany wartosci danego wierzchołka (przy zmianie wartości możemy "iść w górę", ale też mozemy "iść w dół", bo wartość może być za duża na swoje miejsce. Warto o tym pamiętać.  
