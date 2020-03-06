@@ -19,11 +19,10 @@ Kolejka priorytetowa z posortowanymi rosnąco elementami.
 
 
 ___WAŻNE___  
- 
  Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
  Kopiec to kopiec :)
   
-.  
+
   
 ## Struktura
 
