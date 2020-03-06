@@ -103,7 +103,7 @@ Dodawanie polega na włożeniu elementu tak jak zostało to pokazane powyżej, a
   
 Dla ułatwienia załóżmy, ze operujemy na `kopcu MIN` *(analogicznie postępujemy na `kopcu MAX`)*.  
 Dodany element zostaje porównywany z ojcem, a następnie, jeśli jego wartość jest mniejsza to zamieniają się miejscami.  
-Następnie element ten, będąc na miejscu swojego poprzedniego ojca jest porównywany i ewentualnie zamieniany z teraźniejszym ojcem.  
+Następnie element ten, będąc na miejscu swojego poprzedniego ojca jest porównywany i ewentualnie zamieniany z nowym ojcem.  
 Ta sytuacja powtarza się dopóki syn jest mniejszy od ojca lub dopóki nie dojdzeimy do korzenia, który ojca już nie ma ;_;  
 
 Mały przykład:  
