@@ -152,7 +152,7 @@ Usunięcie korzenia i pozostawienie dziury -> "jazda z dziurą w dół" -> pobra
 
 `n` - liczba elementów w kopcu
 
-Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostał nienaruszony.  
+Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostali nienaruszeni.  
 **Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.  
 
 Drugi sposób teoretycznie jest bardziej skomplikowany, ale przekonamy się, że może być lepszy. Mamy diurę, pusty element, który "idzie w dół" drzewa, a my ignorujemy póki co fakt, że naruszona zostaje struktura kopca. Z każdym krokiem staje się ojcem dla dwóch wierzchołków. Porównujemy te dwa wierzchołki i mniejszy z nich staje się ojcem, a dziura przechodzi na jego miejsce. Dzieje się tak, dopóki ten pusty element nie dojdze, gdzie już synów mieć nie będzie. Po dotarciu tam nagle zauważamy, że nasza struktura zostaje naruszona, a więc któryś element musi wejść na jej miejsce. Na ochotnika zgłasza się ostatni element `v` z tablicy (prawy dolny na ostatnim poziomie), ale może zdarzyć się, że będzie on zbyt mały, aby pozostać w tym miejscu, dlatego "idziemy z nim w górę".
