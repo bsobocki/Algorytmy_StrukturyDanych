@@ -140,8 +140,8 @@ Mamy tablicę. Chcemy potraktować ją jako kopiec, ale nie pasuje nam ustawieni
 Mówiliśmy wcześniej o tym, że wierzchołek wraz ze swoim potomstwem tworzy poddrzewo, które też ma porządek kopcowy.  
 Zatem może warto zacząć z tej strony?  
 
-Możemy zauważyć, że nasz wierzchołek bez żadnego potomstwa to już drzewo, a nawet jest to kopiec.  
-Zatem potraktujemy jako kopce liście naszego kopca, wierzchołki z najniższego poziomu.  
+Możemy zauważyć, że nasz wierzchołek bez żadnego potomstwa jest już drzewem, a nawet kopcem.  
+Zatem potraktujemy tak liście naszego kopca, wierzchołki z najniższego poziomu.  
 
 Wiemy, że ich moze byc nawet połowa wszystkich elementów! 
 
