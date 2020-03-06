@@ -147,7 +147,7 @@ Zatem potraktujemy tak liście naszego kopca, wierzchołki z najniższego poziom
 Wiemy, że ich moze byc nawet połowa wszystkich elementów! 
 
 Dobrze. mamy nasze poddrzewa jednoelementowe. Chcemy dołączyć do nich odpowiadających im ojców. Każdy ojciec ma dwóch synów, więc o ile to możliwe dobieramy w pary sąsiadów i dobieramy ich ojca względem pozycji w tablicy.  
-Nie każdy będzie dobrym ojcem. Ten z wierzchołków `v_i-1`, `v_i` *(i= 1, 2, ..., N)*, którego wartość będzie najmniejsza spośród danej trójki wierzchołków (ojciec i synowie) staje się teraz ojcem.  
+Nie każdy będzie dobrym ojcem. Ten z wierzchołków `v_i-1`, `v_i` *(i= 1, 2, ..., N-1)*, którego wartość będzie najmniejsza spośród danej trójki wierzchołków (ojciec i synowie) staje się teraz ojcem.  
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_small_heaps.png"/>  
 
 Będziemy krok ten powtarzać. Musimy jednak pamiętać, że zmiany nie tylko będą wprowadzane w danej trójce, ale w całym poddrzewie. Dlatego po dodaniu ojca musimy "zjechać nim w dół".    
