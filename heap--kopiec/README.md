@@ -49,12 +49,18 @@ Przykładwe kopce __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **pop
 Chcemy, aby kopiec był jak najbardziej wydajny czasowo i pamięciowo. W związku z tym kopiec powinien opierać się na tablicy.  
 Dostęp do danych węzłów opiera się na dostępie do odpowiednich komórek.  
 Jeśli `i` to indeks wierzchołka wówczas:
-  - `lewy_syn(kopiec, i) => kopiec[ (i+1)*2 - 1 ]`
-  - `prawy_syn(kopiec, i) => kopiec[ (i+1)*2 ]`
-  - `ojciec(kopiec, i) => jeśli i!=0 => kopiec[ (i-1)//2 ]`
+  - `lewy_syn(kopiec, i)  =>  kopiec [ (i+1)*2 - 1 ]`
+  - `prawy_syn(kopiec, i)  =>  kopiec [ (i+1)*2 ]`
+  - `ojciec(kopiec, i)  =>  jeśli i!=0 => kopiec [ (i-1)//2 ]`
   
  Gdzie operator `//` oznacza dzielenie całkowite.  
  Operacje przesunięć bitowych pomogą szybko dostać sie do poszczególnych elementów.   
+ ```cpp
+ // dzielenie całkowite przez 2 określimy jako przesunięcie bitowe o 1 bit w prawo
+ (i-1) >> 1
+ // mnożenie razy 2 określimy jako przesunięcie bitowe o 1 bit w lewo
+ (i+1) << 1
+ ```
    
  Mała wizualizacja:  
  <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_array.png" />
