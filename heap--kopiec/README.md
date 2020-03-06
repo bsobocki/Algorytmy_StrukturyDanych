@@ -7,7 +7,7 @@ Potrzebna nam __kolejka priorytetowa__ - struktura danych, która będzie zachow
   
 Pobierany element za pomocą operacji `pop` to element z korzenia kopca.  
 
-.  
+
 
 ### Przykład
 
@@ -16,7 +16,7 @@ Kolejka priorytetowa z posortowanymi rosnąco elementami.
 **Możliwa Implementacja:**  
     `Kopiec MIN` - korzeń drzewa jest najmniejszym elementem w strukturze.   
 
-.  
+
 
 ___WAŻNE___  
  
