@@ -139,13 +139,23 @@ Mamy tablicę. Chcemy potraktować ją jako kopiec, ale nie pasuje nam ustawieni
 
 Mówiliśmy wcześniej o tym, że wierzchołek wraz ze swoim potomstwem tworzy poddrzewo, które też ma porządek kopcowy.  
 Zatem może warto zacząć z tej strony?  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_unordered_array.png"/>
 
 Możemy zauważyć, że nasz wierzchołek bez żadnego potomstwa jest już drzewem, a nawet kopcem.  
 Zatem potraktujemy tak liście naszego kopca, wierzchołki z najniższego poziomu.  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_one-element_heaps.png"/>
 
 Wiemy, że ich moze byc nawet połowa wszystkich elementów! 
 
 Dobrze. mamy nasze poddrzewa jednoelementowe. Chcemy dołączyć do nich odpowiadających im ojców. Każdy ojciec ma dwóch synów, więc o ile to możliwe dobieramy w pary sąsiadów i dobieramy ich ojca względem pozycji w tablicy.  
-Nie każdy będzie dobrym ojcem, a więc ten z wierzchołków `v_i-1, v_i` *(i= 1, 2, ..., N)*, którego wartość z nich będzie najmniejsza spośród te trójki wierzchołków (ojciec i synowie), zamieniamy miejscami tak, że teraz ojciec i większy z synów jest synem najmmniejszego z wierzchołków tej trójki.
+Nie każdy będzie dobrym ojcem. Ten z wierzchołków `v_i-1`, `v_i` *(i= 1, 2, ..., N)*, którego wartość będzie najmniejsza spośród danej trójki wierzchołków (ojciec i synowie) staje się teraz ojcem.  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_small_heaps.png"/>  
 
-Krok ten powtarzamy, jednak 
+Będziemy krok ten powtarzać. Musimy jednak pamiętać, że zmiany nie tylko będą wprowadzane w danej trójce, ale w całym poddrzewie. Dlatego po dodaniu ojca musimy "zjechać nim w dół".    
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_bigger_heaps.png"/>  
+
+Dodanie korzenia sprawi, że mamy już cały kopiec.  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_biggest_heaps.png"/>
+
+A tak wygląda nasza tablica:  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_ordered_array.png"/>   
