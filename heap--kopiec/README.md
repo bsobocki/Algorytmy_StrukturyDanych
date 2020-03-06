@@ -114,7 +114,7 @@ Ta sytuacja powtarza się dopóki syn jest mniejszy od ojca lub dopóki nie dojd
 
 Mały przykład:  
 ```cpp
-heap H;
+heap_min H;
 std::vector<int> ints = {10, 7, 8, 9, 4, 2, 6, 1}; 
 
 for (int i : ints) 
@@ -129,12 +129,60 @@ Mniej więcej będzie wyglądać tak:
 
 Dodawanie elementu odbywa się w czasie logarytmicznym `O(log n)`, gdzie podstawą logarytmu jest `2`, a `n` oznacza liczbę elementów w kopcu.  
 
+
+### Delete_min
+
+Możemy już dodawać elementy do naszej struktury, a zatem możemy łatwo zaimplemmentować operację `push` w naszej kolejce priorytetowej.   
+Potrzebna będzie nam jeszcze funkcja `pop`, która zwraca i usuwa z kolejki pierwszy względem ustalonego porządku element.  
+
+Pomoże nam w tym operacja na kopcu - ***delete_min***.  
+
+#### Co chcemy zrobić?
+
+Chcemy usunąć i zwrócić korzeń struktury, a następnie przywrócić porządek kopcowy.  
+
+Możemy to zrobić na dwa sposoby:  
+```
+Pobieranie elementu na samym dole na prawo (ostatni z tablicy)  -> dodanie do korzenia ->  "jazda w dół"
+```
+lub  
+```
+Usunięcie korzenia i pozostawienie dziury -> "jazda z dziurą w dół" -> pobranie elementu na samym dole na prawo -> wstawienie go zamiast dziury -> "jazda w górę"
+```
+
+`n` - liczba elementów w kopcu
+
+Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostał nienaruszony.  
+**Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.  
+
+Drugi sposób teoretycznie jest bardziej skomplikowany, ale przekonamy się, że może być lepszy. Mamy diurę, pusty element, który "idzie w dół" drzewa, a my ignorujemy póki co fakt, że naruszona zostaje struktura kopca. Z każdym krokiem staje się ojcem dla dwóch wierzchołków. Porównujemy te dwa wierzchołki i mniejszy z nich staje się ojcem, a dziura przechodzi na jego miejsce. Dzieje się tak, dopóki ten pusty element nie dojdze, gdzie już synów mieć nie będzie. Po dotarciu tam nagle zauważamy, że nasza struktura zostaje naruszona, a więc któryś element musi wejść na jej miejsce. Na ochotnika zgłasza się ostatni element `v` z tablicy (prawy dolny na ostatnim poziomie), ale może zdarzyć się, że będzie on zbyt mały, aby pozostać w tym miejscu, dlatego "idziemy z nim w górę".
+Teoretycznie **ilość porównań** wynosić będzie `2 * log n`, ponieważ "idąc w dół" dziurą porównujemy ze sobą tylko jej kolejnych synów, natomiast "idąc w górę" naszym ochotnikiem `v` porównujemy go z kolejnymi ojcami.  
+
+```
+- Czy zatem są one równe pod względem ilości porównań?
+
+- Nie.
+```
+
+Zauważmy, że "idąc w górę z dołu" elementem `v` w zasadzie nie zajdziemy za daleko. Prawdopodobieństwo, że ten element będzie wystarczająco mały, żeby pójść wysoko w górę (na szczyt na pewno nie dojdzie, bo inaczej nie byłby na dole) jest znikome, dlatego złożoność drugiego sposobu będzie dużo niższa.
+
+
+
 ### Przywracanie porządku
 
 Jak powyżej można przeczytać, Kopiec potrzebuje swojego porządku, aby prawidłowo i szybko funkcjonować.  
 
-Przywracanie porządku dla danego elementu `e` polega na sprawdzeniu, czy jest on na odpowiednim miejscu, to znaczy, czy jego ojciec jest od niego mniejszy (działamy na kopcu MIN). Jeśli tak to zamieniamy się miejscami i procedura przywracania porządku wywoływana jest dla `v`, które teraz jest już na miejscu swojego ojca. Idziemy w ten sposób *"do góry"* dopóki każdy kolejny ojciec jest większy lub do korzenia.
+Przywracanie porządku dla danego elementu `e` polega na:
+1) "pójściu w górę" :  
+  Sprawdzeniu, czy jest on na odpowiednim miejscu, to znaczy, czy jego ojciec jest od niego mniejszy.  
+  Jeśli tak to zamieniamy się miejscami i procedura przywracania porządku wywoływana jest dla `e`, które teraz jest już na miejscu swojego ojca.  
+  Idziemy w ten sposób *"do góry"* dopóki każdy kolejny ojciec jest większy lub do korzenia.
 
+2) "pójściu w dół" :  
+  Sprawdzeniu, który syn jest mniejszy, a następnie czy dany wierzchołek `e` jest mniejszy od mniejszego z nich.  
+  Jeśli jest większy, to zamieniamy ich miejscami. W ten sposób najmniejszy z danej trójki (ojciec i synowie) zostaje ojcem.
+  Idziemy w ten sposób *"w dół"* dopóki któryś z synów będzie mniejszy od danego wierzchołka, lub dopóki nie dojdziemy do najniższego poziomu drzewa.   
+  
 Tak przywracamy porządek dla danego `v`. Używamy przywracania porządku w operacjach takich jak ***`insert`***, ***`delete_min`***, czy zmiany wartosci danego wierzchołka (przy zmianie wartości możemy "iść w górę", ale też mozemy "iść w dół", bo wartość może być za duża na swoje miejsce. Warto o tym pamiętać.  
 
 Jednak przywracanie porządku moze dotyczyć nie tylko pojedyńczego elementu, ale o tym za chwilę. ;)  
