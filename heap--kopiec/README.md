@@ -113,6 +113,15 @@ Następnie element ten, będąc na miejscu swojego poprzedniego ojca jest porów
 Ta sytuacja powtarza się dopóki syn jest mniejszy od ojca lub dopóki nie dojdziemy do korzenia, który ojca już nie ma ;_;  
 
 Mały przykład:  
+```cpp
+heap H;
+std::vector<int> ints = {10, 7, 8, 9, 4, 2, 6, 1}; 
+
+for (int i : ints) 
+  H.insert(i);
+```
+
+Mniej więcej będzie wyglądać tak:  
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert_example.png" />
 
