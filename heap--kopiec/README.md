@@ -33,6 +33,9 @@ Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz con
 
 Każdy wierzchołek i jego całe potomstwo - synowie synów, ich synowie, synowie tych synów synów synów itd. tworzą poddrzewo, które również jest kopcem.  
 
+Każdy wierzchołek ma 2-ch synów, stąd każdy kolejny poziom ma 2 razy więcej wierzchołków.  
+Oznacza to że liczba takich poziomów wynosi `floor( log n ) + 1` (podłoga z logarytmu o podstawie 2 z liczby elementów kopca plus 1, bo liczymy, że drzewo jednoelementowe ma wysokość 1).
+
 
 ### Uzupełnianie  
 
