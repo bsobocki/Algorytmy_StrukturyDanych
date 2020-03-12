@@ -20,6 +20,7 @@
       - ***[Złożoność-delete_min](#złożoność-delete_min)***
     - ***[Przywracanie porządku](#przywracanie-porządku)***
     - ***[Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy)***
+      - ***[Złożoność-budowanie_kopca_z_tablicy](#złożoność-budowanie_kopca_z_tablicy)***
 
 ## Motywacja
 
@@ -259,3 +260,28 @@ Dodanie korzenia sprawi, że mamy już cały kopiec.
 
 A tak wygląda nasza tablica:  
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_ordered_array.png"/>   
+
+
+#### Złożoność-budowanie_kopca_z_tablicy
+
+```
+przejście wierzchołka ' v ' z jednego poziomu w drugi (w dół) kosztuje 2 porównania: 
+  - porównanie dwóch synów 
+  - porównanie mniejszego syna i ojca 
+```
+
+| Krok  | Złożoność |
+| --- | --- |
+| Najpierw ustalamy, że liście dostępnego drzewa (tablicy) to małe kopce. | `2 * log 1` |
+| Dołączamy ojca dla każdej pary (i jeśli liści była nieparzysta ilość to dla jednego wierzchołka - samotnika) i idziemy z nim w dół | `2 * log 2` |
+| ... | ... | 
+| Do utworzonych drzew (k wszystkich wierzchołków) dodajemy ojców łączących sąsiadujące ze sobą pary drzew i "idziemy nim w dół" | ` 2 * log k ` |
+| ... | ... |
+| Dodajemy korzeń i "idziemy nim w dół" | ` 2 * log n ` |
+
+ ***Razem***  
+```
+2 ( log 1 + log 2 + ... + log k + ... + log n )  =  O(n) 
+```
+
+A zatem szacowana złożoność wynosi ` O(n) `.
