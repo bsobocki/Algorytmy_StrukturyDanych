@@ -33,6 +33,7 @@
     - ***[Maximum-MIN-MAX](#maximum-min-max)***
     - ***[Insert-MIN-MAX](#insert-min-max)***
     - ***[Delete_min-MIN-MAX](#delete_min-min-max)***
+    - ***[Delete_max-MIN-MAX](#delete_max-min-max)***
 
 ## Motywacja
 
@@ -359,9 +360,49 @@ Z pomocą przychodzi nam `kopiec MIN-MAX`.
 
 
 ## Struktura Kopca MIN-MAX
+
+Kopiec MIN-MAX składa się z **`kopca MIN`** zawierającego `floor( n/2 )` elementów, oraz **`kopca MAX`** zawierającego `ceil( n/2 )` elementów.  
+Są one ułożone tak, że **kopiec MAX** jest "do góry nogami" połączony do **kopca MIN**.  
+
+
 ## Porządek Kocpowy w Kopcu MIN-MAX
+
+Porządek kopcowy polega na tym, aby porządek względem wierzchołków zachowywany był pionowo (tak jak w kopcu MIN czy kopcu MAX oddzielnie).  
+
+**Co to oznacza?**
+
+Na samej górze (górny korzeń) mamy element minimalny, natomiast na samym dole (dolny korzeń) mamy element maksymalny.  
+Kopce zaczynają się od korzeni aż do połowy struktury.  
+
+Porządek tej struktury polega na tym, że element `v` jest większy od swojego poprzednika (wierzchołka umiejscowionego wyżej) i mniejszy od następnika (wierchołka umiejscowionego niżej).    
+
+
 ## Operacje-MIN-MAX
+
+Operacje wykonywane na kopcu MIN-MAX są zbliżone do tych wykonywanych na kopcu MIN i kopcu MAX.
+
 ### Minimum-MIN-MAX
+
+Zwracanie wartości elementu najmniejszego (korzenia MIN).
+
+#### Złożoność 
+Potrzebujemy tylko dostępu do wartości elementu kopca `H`, stąd złożoność wynosi: `O(1)`.
+
 ### Maximum-MIN-MAX
+
+Zwracanie wartości elementu największego (korzenia MAX).
+
+#### Złożoność 
+Potrzebujemy tylko dostępu do wartości elementu kopca `H`, stąd złożoność wynosi: `O(1)`.
+
 ### Insert-MIN-MAX
+
+Dodawanie odbywa się na przemian do kopca MIN i kopca MAX.  
+Na początku chcemy dodać element do kopca MAX, ponieważ dla nieparzystej liczby elementów to ten kopiec powinien zawierać więcej elementów.  
+
+Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.  
+
+
 ### Delete_min-MIN-MAX
+
+### Delete_max-MIN-MAX
