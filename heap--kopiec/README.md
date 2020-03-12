@@ -272,12 +272,12 @@ przejście wierzchołka ' v ' z jednego poziomu w drugi (w dół) kosztuje 2 por
 
 | Krok  | Złożoność |
 | --- | --- |
-| Najpierw ustalamy, że liście dostępnego drzewa (tablicy) to małe kopce. | `   2 * log 1   ` |
-| Dołączamy ojca dla każdej pary (i jeśli liści była nieparzysta ilość to dla jednego wierzchołka - samotnika) i idziemy z nim w dół | `   2 * log 2   ` |
+| Najpierw ustalamy, że liście dostępnego drzewa (tablicy) to małe kopce. | `2*log 1` |
+| Dołączamy ojca dla każdej pary (i jeśli liści była nieparzysta ilość to dla jednego wierzchołka - samotnika) i idziemy z nim w dół | `2*log 2` |
 | ... | ... | 
-| Do utworzonych drzew (k wszystkich wierzchołków) dodajemy ojców łączących sąsiadujące ze sobą pary drzew i "idziemy nim w dół" | `    2 * log k    ` |
+| Do utworzonych drzew (k wszystkich wierzchołków) dodajemy ojców łączących sąsiadujące ze sobą pary drzew i "idziemy nim w dół" | `2*log k` |
 | ... | ... |
-| Dodajemy korzeń i "idziemy nim w dół" | `    2 * log n    ` |
+| Dodajemy korzeń i "idziemy nim w dół" | `2*log n` |
 
  ***Razem***  
 ```
