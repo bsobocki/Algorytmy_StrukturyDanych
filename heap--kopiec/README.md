@@ -1,5 +1,25 @@
 # Kopiec -- Heap
 
+## Co znajdziemy w tym dokumencie
+  - ***[Motywacja](#motywacja)***
+    - ***[Przykład](#przykład)***
+    - ***[Ważne](#ważne)***
+  - ***[Struktura](#struktura)***
+    - ***[Uzupełnianie](#uzupełnianie)***
+  - ***[Implementacja](#implementacja)***
+  - ***[Porządek Kocpowy](#porządek-kopcowy)***
+    - ***[Kryterium](#kryterium)***
+  - ***[Operacje](#operacje)***
+    - ***[Minimum](#minimum)***
+      - ***[Złożoność-minimum](#złożoność-minimum)***
+    - ***[Insert](#insert)***
+      - ***[Złożoność-insert](#złożoność-insert)***
+    - ***[Delete_min](#delete_min)***
+      - ***[Co chcemy zrobić?](#co-chcemy-zrobić)***
+      - ***[Złożoność-delete_min](#złożoność-delete_min)***
+    - ***[Przywracanie porządku](#przywracanie-porządku)***
+    - ***[Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy)***
+
 ## Motywacja
 
 Potrzebna nam __kolejka priorytetowa__ - struktura danych, która będzie zachowywała porządek względem ustalonego kryterium 
@@ -18,7 +38,7 @@ Kolejka priorytetowa z posortowanymi rosnąco elementami.
 
 
 
-___WAŻNE___  
+### WAŻNE  
  Mimo, iż do implementacji kolejki priorytetowej możemy użyć kopca, to kopiec nie jest kolejką priorytetową!  
  Kopiec to kopiec :)
   
@@ -95,7 +115,7 @@ Oznaczymy nasz kopiec MIN jako H.
   return H[0];
 ```
 
-#### Złożoność
+#### Złożoność-minimum
 Czas wykonania **stały**  `O(1)`, potrzebujemy tylko dostęu do `H[0]`.  
 
 ### Insert
@@ -128,7 +148,7 @@ Mniej więcej będzie wyglądać tak:
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert_example.png" />
 
-#### Złożoność
+#### Złożoność-insert
 
 Dodawanie elementu odbywa się w czasie logarytmicznym `O(log n)`, gdzie podstawą logarytmu jest `2`, a `n` oznacza liczbę elementów w kopcu.  
 
@@ -173,7 +193,9 @@ Teoretycznie **ilość porównań** wynosić będzie `2 * log n`, ponieważ "id�
 
 Zauważmy, że "idąc w górę z dołu" elementem `v` w zasadzie nie zajdziemy za daleko. Prawdopodobieństwo, że ten element będzie wystarczająco mały, żeby pójść wysoko w górę (na szczyt na pewno nie dojdzie, bo inaczej nie byłby na dole) jest znikome, dlatego złożoność drugiego sposobu będzie dużo niższa.
 
+#### Złożoność-delete_min
 
+Usunięcie elementu wynosi `O(1)`, natomiast wstawianie na jego miejsce, któregoś z istniejących już wierzchołków wiąże się z kosztem `O(log n)`, stąd operacja **delete_min** ma złożoność `O(log n)`.
 
 ### Przywracanie porządku
 
