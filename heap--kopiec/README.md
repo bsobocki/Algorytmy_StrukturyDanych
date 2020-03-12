@@ -26,7 +26,7 @@
   - ***[Heap Sort](#heap-sort)***
     - ***[Jak tego dokonać?](#jak-tego-dokonać)***
   - ***[Kopiec MIN-MAX](#kopiec-min-max)***
-  - ***[Struktura KopcaMIN-MAX](#struktura-kopca-min-max)***
+  - ***[Struktura Kopca MIN-MAX](#struktura-kopca-min-max)***
   - ***[Porządek Kocpowy w Kopcu MIN-MAX](#porządek-kopcowy-w-kopcu-min-max)***
   - ***[Operacje-MIN-MAX](#operacje-min-max)***
     - ***[Minimum-MIN-MAX](#minimum-min-max)***
@@ -356,7 +356,7 @@ Usuwanie i dodawanie elementów powinno odbywać się dla obu kopców
 Z pomocą przychodzi nam `kopiec MIN-MAX`.  
 
 
-## Struktura KopcaMIN-MAX
+## Struktura Kopca MIN-MAX
 ## Porządek Kocpowy w Kopcu MIN-MAX
 ## Operacje-MIN-MAX
 ### Minimum-MIN-MAX
