@@ -5,6 +5,7 @@
     - ***[Przykład](#przykład)***
     - ***[Ważne](#ważne)***
   - ***[Struktura](#struktura)***
+    - ***[Wysokość](#wysokość)***
     - ***[Uzupełnianie](#uzupełnianie)***
   - ***[Implementacja](#implementacja)***
   - ***[Porządek Kocpowy](#porządek-kopcowy)***
@@ -48,13 +49,18 @@ Kolejka priorytetowa z posortowanymi rosnąco elementami.
 
 Kopiec jest jednym z przykładów **drzewa binarnego**.  
 
-Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz conajwyżej dwóch synów: lewego (kolor zielony) i prawego (kolor czerwony).  
+Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz conajwyżej dwóch synów: lewego (kolor zielony) i prawego (kolor czerwony).    
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_root.png" />
 
 Każdy wierzchołek i jego całe potomstwo - synowie synów, ich synowie, synowie tych synów synów synów itd. tworzą poddrzewo, które również jest kopcem.  
 
+### Wysokość  
+
 Każdy wierzchołek ma 2-ch synów, stąd każdy kolejny poziom ma 2 razy więcej wierzchołków.  
 Oznacza to że liczba takich poziomów wynosi `floor( log n ) + 1` (podłoga z logarytmu o podstawie 2 z liczby elementów kopca plus 1, bo liczymy, że drzewo jednoelementowe ma wysokość 1).
+
+***Wniosek***   
+Wysokość drzewa wynosi `O(log n)`, dlatego operacje `przejścia po drzewie w górę czy w dół` mają złożoność `O(log n)`.
 
 
 ### Uzupełnianie  
@@ -85,7 +91,8 @@ Jeśli `i` to indeks wierzchołka wówczas:
  (i+1) << 1
  ```
    
- Mała wizualizacja:  
+ Mała wizualizacja:    
+ 
  <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_array.png" />
 
 ## Porządek Kopcowy
