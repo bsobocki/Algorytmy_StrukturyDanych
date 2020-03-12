@@ -17,6 +17,8 @@
       - ***[Złożoność-insert](#złożoność-insert)***
     - ***[Delete_min](#delete_min)***
       - ***[Co chcemy zrobić?](#co-chcemy-zrobić)***
+      - ***[Usuwanie przez zastąpienie ostatnim elementem](#usuwanie-przez-zastąpienie-ostatnim-elementem)***
+      - ***[Usuwanie przez użycie dziury](#usuwanie-przez-użycie-dziury)***
       - ***[Złożoność-delete_min](#złożoność-delete_min)***
   - ***[Przywracanie porządku](#przywracanie-porządku)***
   - ***[Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy)***
@@ -171,9 +173,9 @@ Potrzebna będzie nam jeszcze funkcja `pop`, która zwraca i usuwa z kolejki pie
 
 Pomoże nam w tym operacja na kopcu - ***delete_min***.  
 
-#### Co chcemy zrobić?
+#### ***Co chcemy zrobić?***
 
-Chcemy usunąć i zwrócić korzeń struktury, a następnie przywrócić porządek kopcowy.  
+Chcemy zwrócić korzeń struktury i go usunąć, a następnie przywrócić porządek kopcowy.  
 
 Możemy to zrobić na dwa sposoby:  
 ```
@@ -186,10 +188,13 @@ Usunięcie korzenia i pozostawienie dziury -> "jazda z dziurą w dół" -> pobra
 
 `n` - liczba elementów w kopcu
 
+#### Usuwanie przez zastąpienie ostatnim elementem 
+
 Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostali nienaruszeni.  
 **Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.   
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_delete_min.png"/>
 
+#### Usuwanie przez użycie dziury
 
 Drugi sposób teoretycznie jest bardziej skomplikowany, ale przekonamy się, że może być lepszy.  
 Mamy diurę, pusty element, który "idzie w dół" drzewa, a my ignorujemy póki co fakt, że naruszona zostaje struktura kopca. Z każdym krokiem staje się ojcem dla dwóch wierzchołków. Porównujemy te dwa wierzchołki i mniejszy z nich staje się ojcem, a dziura przechodzi na jego miejsce. Dzieje się tak, dopóki ten pusty element nie dojdze, gdzie już synów mieć nie będzie. Po dotarciu tam nagle zauważamy, że nasza struktura zostaje naruszona, a więc któryś element musi wejść na jej miejsce. Na ochotnika zgłasza się ostatni element `v` z tablicy (prawy dolny na ostatnim poziomie), ale może zdarzyć się, że będzie on zbyt mały, aby pozostać w tym miejscu, dlatego "idziemy z nim w górę".  
@@ -326,4 +331,4 @@ for (int i = n; i!=1; i--){
 
 ***Jak można trochę to przyspieszyć?***   
 Możemy starać się o to, żeby ***stała***, która towarzyszy `n log n` w szacowaniu `O(n log n)` była możliwie jak najmniejsza.  
-Do tego celu użyjemy opcji **delete_min** używającą [dziurę](#co-chcemy-zrobić).  
+Do tego celu użyjemy opcji **delete_min** używającą [dziurę](#usuwanie-przez-użycie-dziury).  
