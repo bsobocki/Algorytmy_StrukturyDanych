@@ -354,7 +354,7 @@ Usuwanie i dodawanie elementów powinno odbywać się dla obu kopców
 Zbyt duże koszty! Chcemy minimalizować czas i pamięć...
 ```
 
-***Lepsze rozwiązanie***
+***Lepsze rozwiązanie***  
 Z pomocą przychodzi nam `kopiec MIN-MAX`.  
 
 
