@@ -18,9 +18,12 @@
     - ***[Delete_min](#delete_min)***
       - ***[Co chcemy zrobić?](#co-chcemy-zrobić)***
       - ***[Złożoność-delete_min](#złożoność-delete_min)***
-    - ***[Przywracanie porządku](#przywracanie-porządku)***
-    - ***[Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy)***
+  - ***[Przywracanie porządku](#przywracanie-porządku)***
+  - ***[Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy)***
       - ***[Złożoność-budowanie_kopca_z_tablicy](#złożoność-budowanie_kopca_z_tablicy)***
+  - ***[Heap Sort](#heap-sort)***
+    - ***[Jak tego dokonać?](#jak-tego-dokonać)***
+    
 
 ## Motywacja
 
@@ -285,3 +288,42 @@ przejście wierzchołka ' v ' z jednego poziomu w drugi (w dół) kosztuje 2 por
 ```
 
 A zatem szacowana złożoność wynosi ` O(n) `.
+
+## Heap Sort
+
+No dobrze, mamy kopiec, wiemy jak działa i jak wykonywać na nim potrzebne operacje.  
+Kopiec nasz działa dość szybko, a więc nasuwa się pytanie:
+```
+Czy nie możemy użyć kopca do sortowania tablicy?
+```
+Odpowiedź jest dość pozytywna:
+```
+Owszem, możemy.
+```
+
+### Jak tego dokonać?
+
+Specyfikujmy problem.  
+
+***Dane***: tablica **n**-elementowa `T [1 .. n]` z losowo rozmieszczonymi w niej elementami   
+***Zadanie***: uporządkowana tablica `T` według określonego porządku  
+
+
+Algorytm:
+
+1) Zbuduj kopiec z `T` ( [Budowanie kopca z dostępnej tablicy](#budowanie-kopca-z-dostępnej-tablicy) )
+2) **n** razy wykonaj **delete_min**, a następnie wstaw dane *minimum* na koniec tablicy (gdy już uporządkujemy drzewo i ostatnie miejsce w tablicy będzie puste).
+
+```cpp
+for (int i = n; i!=1; i--){
+  swap( T[1], T[i] );
+  przesun_w_dol( T, 1 ); // argumenty: kopiec, indeks
+}
+```
+
+#### Złożoność 
+`O( n log n )`.
+
+***Jak można trochę to przyspieszyć?***   
+Możemy starać się o to, żeby ***stała**, która towarzyszy `n log n` w szacowaniu `O(n log n)` była możliwie jak najmniejsza.  
+Do tego celu użyjemy opcji **delete_min** używającą [dziurę](#co-chcemy-zrobić).  
