@@ -156,11 +156,14 @@ Usunięcie korzenia i pozostawienie dziury -> "jazda z dziurą w dół" -> pobra
 `n` - liczba elementów w kopcu
 
 Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostali nienaruszeni.  
-**Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.  
+**Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.   
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_delete_min.png"/>
+
 
 Drugi sposób teoretycznie jest bardziej skomplikowany, ale przekonamy się, że może być lepszy.  
 Mamy diurę, pusty element, który "idzie w dół" drzewa, a my ignorujemy póki co fakt, że naruszona zostaje struktura kopca. Z każdym krokiem staje się ojcem dla dwóch wierzchołków. Porównujemy te dwa wierzchołki i mniejszy z nich staje się ojcem, a dziura przechodzi na jego miejsce. Dzieje się tak, dopóki ten pusty element nie dojdze, gdzie już synów mieć nie będzie. Po dotarciu tam nagle zauważamy, że nasza struktura zostaje naruszona, a więc któryś element musi wejść na jej miejsce. Na ochotnika zgłasza się ostatni element `v` z tablicy (prawy dolny na ostatnim poziomie), ale może zdarzyć się, że będzie on zbyt mały, aby pozostać w tym miejscu, dlatego "idziemy z nim w górę".  
 Teoretycznie **ilość porównań** wynosić będzie `2 * log n`, ponieważ "idąc w dół" dziurą porównujemy ze sobą tylko jej kolejnych synów, natomiast "idąc w górę" naszym ochotnikiem `v` porównujemy go z kolejnymi ojcami.  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_delete_min_hole.png"/>
 
 ```
 - Czy zatem są one równe pod względem ilości porównań?
@@ -190,6 +193,8 @@ Przywracanie porządku dla danego elementu `e` polega na:
 Tak przywracamy porządek dla danego `v`. Używamy przywracania porządku w operacjach takich jak ***`insert`***, ***`delete_min`***, czy zmiany wartosci danego wierzchołka (przy zmianie wartości możemy "iść w górę", ale też mozemy "iść w dół", bo wartość może być za duża na swoje miejsce. Warto o tym pamiętać.  
 
 Jednak przywracanie porządku moze dotyczyć nie tylko pojedyńczego elementu, ale o tym za chwilę. ;)  
+
+
 
 ## Budowanie kopca z dostępnej tablicy
 
