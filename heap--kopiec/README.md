@@ -25,7 +25,14 @@
       - ***[Złożoność-budowanie_kopca_z_tablicy](#złożoność-budowanie_kopca_z_tablicy)***
   - ***[Heap Sort](#heap-sort)***
     - ***[Jak tego dokonać?](#jak-tego-dokonać)***
-    
+  - ***[Kopiec MIN-MAX](#kopiec-min-max)***
+  - ***[Struktura KopcaMIN-MAX](#struktura-kopca-min-max)***
+  - ***[Porządek Kocpowy w Kopcu MIN-MAX](#porządek-kopcowy-w-kopcu-min-max)***
+  - ***[Operacje-MIN-MAX](#operacje-min-max)***
+    - ***[Minimum-MIN-MAX](#minimum-min-max)***
+    - ***[Maximum-MIN-MAX](#maximum-min-max)***
+    - ***[Insert-MIN-MAX](#insert-min-max)***
+    - ***[Delete_min-MIN-MAX](#delete_min-min-max)***
 
 ## Motywacja
 
@@ -332,3 +339,27 @@ for (int i = n; i!=1; i--){
 ***Jak można trochę to przyspieszyć?***   
 Możemy starać się o to, żeby ***stała***, która towarzyszy `n log n` w szacowaniu `O(n log n)` była możliwie jak najmniejsza.  
 Do tego celu użyjemy opcji **delete_min** używającą [dziurę](#usuwanie-z-użyciem-dziury).  
+
+
+## Kopiec MIN-MAX
+
+Dobrze by było, gdyby nasza **kolejka priorytetowa** posiadała równocześnie operację `pop_min` i `pop_max`.  
+
+***Jak moglibyśmy skonstruować naszą kolejkę, aby umożliwić jej usuwanie najmniejszego i największego elementu?***  
+
+***Naiwne rozwiązanie***   
+Utworzyć 2 kopce: MIN i MAX  
+Usuwanie i dodawanie elementów powinno odbywać się dla obu kopców  
+***Zbyt duże koszty! Chcemy minimalizować Czas i Pamięć***
+
+***Lepsze rozwiązanie***
+Z pomocą przychodzi nam `kopiec MIN-MAX`.  
+
+
+## Struktura KopcaMIN-MAX
+## Porządek Kocpowy w Kopcu MIN-MAX
+## Operacje-MIN-MAX
+### Minimum-MIN-MAX
+### Maximum-MIN-MAX
+### Insert-MIN-MAX
+### Delete_min-MIN-MAX
