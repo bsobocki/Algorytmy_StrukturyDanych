@@ -325,5 +325,5 @@ for (int i = n; i!=1; i--){
 `O( n log n )`.
 
 ***Jak można trochę to przyspieszyć?***   
-Możemy starać się o to, żeby ***stała**, która towarzyszy `n log n` w szacowaniu `O(n log n)` była możliwie jak najmniejsza.  
+Możemy starać się o to, żeby ***stała***, która towarzyszy `n log n` w szacowaniu `O(n log n)` była możliwie jak najmniejsza.  
 Do tego celu użyjemy opcji **delete_min** używającą [dziurę](#co-chcemy-zrobić).  
