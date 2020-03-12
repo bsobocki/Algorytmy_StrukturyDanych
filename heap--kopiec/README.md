@@ -350,7 +350,9 @@ Dobrze by było, gdyby nasza **kolejka priorytetowa** posiadała równocześnie 
 ***Naiwne rozwiązanie***   
 Utworzyć 2 kopce: MIN i MAX  
 Usuwanie i dodawanie elementów powinno odbywać się dla obu kopców  
-***Zbyt duże koszty! Chcemy minimalizować Czas i Pamięć***
+```
+Zbyt duże koszty! Chcemy minimalizować czas i pamięć...
+```
 
 ***Lepsze rozwiązanie***
 Z pomocą przychodzi nam `kopiec MIN-MAX`.  
