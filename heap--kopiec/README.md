@@ -365,6 +365,7 @@ Kopiec MIN-MAX składa się z **`kopca MIN`** zawierającego `floor( n/2 )` elem
 oraz **`kopca MAX`** zawierającego `ceil( n/2 )` elementów.  
 Są one ułożone tak, że **kopiec MAX** jest "do góry nogami" połączony do **kopca MIN**.  
 
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min_max.png" />
 
 ## Porządek Kocpowy w Kopcu MIN-MAX
 
@@ -377,6 +378,19 @@ Kopce zaczynają się od korzeni aż do połowy struktury.
 
 Porządek tej struktury polega na tym, że element `v` jest większy od swojego poprzednika (wierzchołka umiejscowionego wyżej) i mniejszy od następnika (wierchołka umiejscowionego niżej).    
 
+**Jak przebiega porządek na granicy kopców?**
+
+Wyobraźmy sobie, puste liście będące potomkami liści obu kopców:
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_empty_elements.png" />
+
+które są łączone w taki sposób: 
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_connetions.png" />
+
+Po dodaniu elementów łączone są one przebiegiem porządku następująco:
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert.png" />
 
 ## Operacje-MIN-MAX
 
@@ -403,6 +417,7 @@ Na początku chcemy dodać element do kopca MAX, ponieważ dla nieparzystej licz
 
 Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.  
 
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert.png" />
 
 ### Delete_min-MIN-MAX
 
