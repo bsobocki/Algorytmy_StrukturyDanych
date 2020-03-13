@@ -361,7 +361,8 @@ Z pomocą przychodzi nam `kopiec MIN-MAX`.
 
 ## Struktura Kopca MIN-MAX
 
-Kopiec MIN-MAX składa się z **`kopca MIN`** zawierającego `floor( n/2 )` elementów, oraz **`kopca MAX`** zawierającego `ceil( n/2 )` elementów.  
+Kopiec MIN-MAX składa się z **`kopca MIN`** zawierającego `floor( n/2 )` elementów,  
+oraz **`kopca MAX`** zawierającego `ceil( n/2 )` elementów.  
 Są one ułożone tak, że **kopiec MAX** jest "do góry nogami" połączony do **kopca MIN**.  
 
 
