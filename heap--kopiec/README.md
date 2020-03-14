@@ -32,7 +32,7 @@
     - ***[Minimum-MIN-MAX](#minimum-min-max)***
     - ***[Maximum-MIN-MAX](#maximum-min-max)***
     - ***[Insert-MIN-MAX](#insert-min-max)***
-    - ***[Delete_min Delete_max](#delete_min-delete-max)***
+    - ***[Delete_min Delete_max](#delete_min-delete_max)***
 
 ## Motywacja
 
