@@ -421,7 +421,8 @@ Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.
 
 Następnie porównywane są wierzchołki:  
 ```
-Jeśli ...
+Jeśli  v  jest mniejszy od  l  to  v  "idze w górę" (wgłąb kopca MIN).
+W przeciwnym wypadku jeśli  v  jest większy od  h  to  v  "idzie w dół" (wgłąb kopca MAX).
 ```
 
 ### Delete_min-MIN-MAX
