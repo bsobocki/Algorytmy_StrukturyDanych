@@ -417,7 +417,7 @@ Na początku chcemy dodać element do kopca MAX, ponieważ dla nieparzystej licz
 
 Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert2.png" />
 
 ### Delete_min-MIN-MAX
 
