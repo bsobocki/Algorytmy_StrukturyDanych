@@ -419,7 +419,10 @@ Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert2.png" />
 
-Następnie porównywane są wierzchołki:  
+Po każdym dodani elementu `v` porównywane są wierzchołki:  
+
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_check.png" />  
+
 ```
 Jeśli  v  jest mniejszy od  l  to  v  "idze w górę" (wgłąb kopca MIN).
 W przeciwnym wypadku jeśli  v  jest większy od  h  to  v  "idzie w dół" (wgłąb kopca MAX).
