@@ -63,7 +63,7 @@ Kolejka priorytetowa z posortowanymi rosnąco elementami.
 Kopiec jest jednym z przykładów **drzewa binarnego**.  
 
 Składa się z **korzenia - root** (zaznaczonego niebieską strzałką) oraz conajwyżej dwóch synów: lewego (kolor zielony) i prawego (kolor czerwony).    
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_root.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_root.png" />
 
 Każdy wierzchołek i jego całe potomstwo - synowie synów, ich synowie, synowie tych synów synów synów itd. tworzą poddrzewo, które również jest kopcem.  
 
@@ -78,13 +78,13 @@ Wysokość drzewa wynosi `O(log n)`, dlatego operacje `przejścia po drzewie w g
 
 ### Uzupełnianie  
 
-Kopiec uzupełniany jest ***`w dół od lewej strony do prawej`*** (dodawanie ukazane poniżej oraz w pliku [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png) ).  
+Kopiec uzupełniany jest ***`w dół od lewej strony do prawej`*** (dodawanie ukazane poniżej oraz w pliku [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_insert.png) ).  
 Do poziomu **k+1** można dodać element dopiero gdy poziom **k** jest cały zapełniony.  
 
 Przykładwe kopce __niepoprawne__ _(oznaczone czerwonym znakiem `X`)_ oraz **poprawne** *(oznaczone zielonym znakiem `V`)*:  
 
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_wrong_and_correct.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_wrong_and_correct.png"/>
 
 ## Implementacja
 
@@ -106,7 +106,7 @@ Jeśli `i` to indeks wierzchołka wówczas:
    
  Mała wizualizacja:    
  
- <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_array.png" />
+ <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_array.png" />
 
 ## Porządek Kopcowy
 
@@ -142,7 +142,7 @@ Czas wykonania **stały**  `O(1)`, potrzebujemy tylko dostęu do `H[0]`.
 
 Dodawanie elementów do kopca:  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert.png"/>   
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_insert.png"/>   
 
 Kolorem czerwonym zaznaczony został nowo dodany element.  
 
@@ -166,7 +166,7 @@ for (int i : ints)
 
 Mniej więcej będzie wyglądać tak:  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_insert_example.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_insert_example.png" />
 
 #### Złożoność-insert
 
@@ -199,14 +199,14 @@ Usunięcie korzenia i pozostawienie dziury -> "jazda z dziurą w dół" -> pobra
 
 Pierwszy sposób brzmi dość prosto i w miarę intuicyjnie. Chcemy po prostu mieć jak najmniej zaburzeń, więc element ostatni z tablicy jest najlepszą opcją, aby struktura i porządek kopcowy poza korzeniem pozostali nienaruszeni.  
 **Ilość porównań** będzie wynosić `2 * log n`, ponieważ najpierw porównamy synów pomiędzy sobą, a następnie ojca i mniejszego syna.   
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_delete_min.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_delete_min.png"/>
 
 #### Usuwanie z użyciem dziury
 
 Drugi sposób teoretycznie jest bardziej skomplikowany, ale przekonamy się, że może być lepszy.  
 Mamy diurę, pusty element, który "idzie w dół" drzewa, a my ignorujemy póki co fakt, że naruszona zostaje struktura kopca. Z każdym krokiem staje się ojcem dla dwóch wierzchołków. Porównujemy te dwa wierzchołki i mniejszy z nich staje się ojcem, a dziura przechodzi na jego miejsce. Dzieje się tak, dopóki ten pusty element nie dojdze, gdzie już synów mieć nie będzie. Po dotarciu tam nagle zauważamy, że nasza struktura zostaje naruszona, a więc któryś element musi wejść na jej miejsce. Na ochotnika zgłasza się ostatni element `v` z tablicy (prawy dolny na ostatnim poziomie), ale może zdarzyć się, że będzie on zbyt mały, aby pozostać w tym miejscu, dlatego "idziemy z nim w górę".  
 Teoretycznie **ilość porównań** wynosić będzie `2 * log n`, ponieważ "idąc w dół" dziurą porównujemy ze sobą tylko jej kolejnych synów, natomiast "idąc w górę" naszym ochotnikiem `v` porównujemy go z kolejnymi ojcami.  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_delete_min_hole.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_delete_min_hole.png"/>
 
 ```
 - Czy zatem są one równe pod względem ilości porównań?
@@ -255,26 +255,26 @@ Mamy tablicę. Chcemy potraktować ją jako kopiec, ale nie pasuje nam ustawieni
 
 Mówiliśmy wcześniej o tym, że wierzchołek wraz ze swoim potomstwem tworzy poddrzewo, które też ma porządek kopcowy.  
 Zatem może warto zacząć z tej strony?  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_unordered_array.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_unordered_array.png"/>
 
 Możemy zauważyć, że nasz wierzchołek bez żadnego potomstwa jest już drzewem, a nawet kopcem.  
 Zatem potraktujemy tak liście naszego kopca, wierzchołki z najniższego poziomu.  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_one-element_heaps.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_one-element_heaps.png"/>
 
 Wiemy, że moze ich byc nawet połowa wszystkich elementów! 
 
 Dobrze. mamy nasze poddrzewa jednoelementowe. Chcemy dołączyć do nich odpowiadających im ojców. Każdy ojciec ma dwóch synów, więc o ile to możliwe dobieramy w pary sąsiadów i dobieramy ich ojca względem pozycji w tablicy.  
 Nie każdy będzie dobrym ojcem. Ten z wierzchołków `v_i-1`, `v_i` *(i= 1, 2, ..., N-1)*, którego wartość będzie najmniejsza spośród danej trójki wierzchołków (ojciec i synowie) staje się teraz ojcem.  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_small_heaps.png"/>  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_small_heaps.png"/>  
 
 Będziemy krok ten powtarzać. Musimy jednak pamiętać, że zmiany nie tylko będą wprowadzane w danej trójce, ale w całym poddrzewie. Dlatego po dodaniu ojca musimy "zjechać nim w dół".    
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_bigger_heaps.png"/>  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_bigger_heaps.png"/>  
 
 Dodanie korzenia sprawi, że mamy już cały kopiec.  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_biggest_heaps.png"/>
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_biggest_heaps.png"/>
 
 A tak wygląda nasza tablica:  
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_ordered_array.png"/>   
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_ordered_array.png"/>   
 
 
 #### Złożoność-budowanie_kopca_z_tablicy
@@ -364,7 +364,7 @@ Kopiec MIN-MAX składa się z **`kopca MIN`** zawierającego `floor( n/2 )` elem
 oraz **`kopca MAX`** zawierającego `ceil( n/2 )` elementów.  
 Są one ułożone tak, że **kopiec MAX** jest "do góry nogami" połączony do **kopca MIN**.  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min_max.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min_max.png" />
 
 ## Porządek Kocpowy w Kopcu MIN-MAX
 
@@ -383,15 +383,15 @@ Porządek tej struktury polega na tym, że element `v` jest większy od swojego 
 
 Wyobraźmy sobie, puste liście będące potomkami liści obu kopców:
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_empty_elements.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min-max_empty_elements.png" />
 
 które są łączone w taki sposób: 
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_connetions.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min-max_connetions.png" />
 
 Po dodaniu elementów łączone są one przebiegiem porządku następująco:
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min-max_insert.png" />
 
 ## Operacje-MIN-MAX
 
@@ -418,11 +418,11 @@ Na początku chcemy dodać element do kopca MAX, ponieważ dla nieparzystej licz
 
 Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert2.png" />
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min-max_insert2.png" />
 
 Po każdym dodaniu elementu `v` porównywane są wierzchołki:  
 
-<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_check.png" />  
+<img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/images/heap_min-max_check.png" />  
 
 ```
 Jeśli  v  jest mniejszy od  l  to  v  "idze w górę" (wgłąb kopca MIN).
