@@ -371,6 +371,8 @@ Są one ułożone tak, że **kopiec MAX** jest "do góry nogami" połączony do 
 
 Porządek kopcowy polega na tym, aby porządek względem wierzchołków zachowywany był pionowo (tak jak w kopcu MIN czy kopcu MAX oddzielnie).  
 
+Na każdej ścieżce od korzenia do korzenia powinien zostać zachowany porządek kopcowy.   
+
 **Co to oznacza?**
 
 Na samej górze (górny korzeń) mamy element minimalny, natomiast na samym dole (dolny korzeń) mamy element maksymalny.  
