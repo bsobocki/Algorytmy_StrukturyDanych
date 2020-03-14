@@ -419,6 +419,12 @@ Dodawanie odbywa się od lewej do prawej, tak jak w kopcu MIN i kopcu MAX.
 
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/heap--kopiec/heap_min-max_insert2.png" />
 
+Następnie porównywane są wierzchołki:  
+```
+Jeśli ...
+```
+
 ### Delete_min-MIN-MAX
+
 
 ### Delete_max-MIN-MAX
