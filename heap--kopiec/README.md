@@ -32,8 +32,7 @@
     - ***[Minimum-MIN-MAX](#minimum-min-max)***
     - ***[Maximum-MIN-MAX](#maximum-min-max)***
     - ***[Insert-MIN-MAX](#insert-min-max)***
-    - ***[Delete_min-MIN-MAX](#delete_min-min-max)***
-    - ***[Delete_max-MIN-MAX](#delete_max-min-max)***
+    - ***[Delete_min Delete_max](#delete_min-delete-max)***
 
 ## Motywacja
 
@@ -430,7 +429,6 @@ Jeśli  v  jest mniejszy od  l  to  v  "idze w górę" (wgłąb kopca MIN).
 W przeciwnym wypadku jeśli  v  jest większy od  h  to  v  "idzie w dół" (wgłąb kopca MAX).
 ```
 
-### Delete_min-MIN-MAX
+### Delete_min Delete_max
 
-
-### Delete_max-MIN-MAX
+**Delete_min** przebiega podobnie jak do [zwykłego kopca MIN](#usuwanie-przez-zastąpienie-ostatnim-elementem) z tym, że element, który jest dostarczany na miejsce usuniętego korzenia to albo element maksymalny z kopca MIN (jeśli oba kopce mają tyle samo elementów), albo minimalny element z kopca MAX (jeśli kopiec MAX zawierał więcej elementów).  
