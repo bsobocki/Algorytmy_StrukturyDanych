@@ -7,7 +7,7 @@ Idea algorytmów zachłannych polega na tworzeniu algorytmów takich, które w d
 # Przykłady
 
 ## Problem Wydawania Reszty
----
+
 
 Przykładem może być ***problem wydawania reszty***:
 
@@ -71,7 +71,6 @@ Algorytm zachłanny również nie zawsze znajdzie rozwiązanie optymalne (`S` z 
 ```
 
 ## Problem MST - Minimalne Drzewo Rozpinające
----
 
 Przykładem mogą być algorytmy:  
 * [Algorytm Prima](https://pl.wikipedia.org/wiki/Algorytm_Prima)
