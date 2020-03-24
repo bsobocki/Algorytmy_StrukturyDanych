@@ -33,14 +33,14 @@ Dane:
   scal(X_1, X_2)
 ```
 **Złożoność czasowa**:  
-`O (n log n)`
+*O(n log n)*
 
 Instrukcja `sortuj(X_1)` wywołuje merge sort na `X_1`, dzieli je ponownie na małe części jeśli `X_1` jest dostatecznie duże (do ustalenia), a w przeciwnym wypadku (dla małych danych) możemy użyć prostszego sortowania, np `InsertSort`.  
 
 **Złożoność czasowa - sortuj(X_1)**:  
-` O ( n/2 log n/2 ) `
+*O( n/2 log n/2 )*
 
 Instrukcja `scal(X_1, X_2)` przechodzi po posortowanych tablicach `X_1`i `X_2` po kolei przyrównując elementy i wstawiając je do tablicy wynikowej odpowiednio, aby była ona już posortowana.  
 
-**Złożoność czasowa - scal(X_!, X_2)**:
-`O ( n )`
+**Złożoność czasowa - scal(X_1, X_2)**:  
+*O( n )*
