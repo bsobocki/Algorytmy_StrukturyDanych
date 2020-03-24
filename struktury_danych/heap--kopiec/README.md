@@ -144,7 +144,8 @@ Dodawanie elementów do kopca:
  
 <img src="https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/struktury_danych/heap--kopiec/images/gif-insert/insert_heap.gif"/>
 Kolorem czerwonym zaznaczony został nowo dodany element.   
-Dla osób, które nie przepadają za obrazkami GIF: [heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/struktury_danych/heap--kopiec/images/heap_insert.png)
+Dla osób, które nie przepadają za obrazkami GIF: 
+[heap_insert.png](https://github.com/bsobocki/Algorytmy_StrukturyDanych/blob/master/struktury_danych/heap--kopiec/images/heap_insert.png)
 
 Dodawanie polega na włożeniu elementu tak jak zostało to pokazane powyżej, a następnie "przejściu przez drzewo w górę" w celu umiejscowienia dodanego elementu tak, aby został zachwany porządek kopcowy.  
   
