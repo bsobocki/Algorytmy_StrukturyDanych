@@ -2,7 +2,7 @@
 
 ## Idea
 
-Idea algorytmów zachłannych polega na dokonaniu najbardziej trafnego w danej iteracji wyboru. 
+Idea algorytmów zachłannych polega na tworzeniu algorytmów takich, które w danej iteracji dokonują najbardziej trafnego wyboru. 
 
 ## Przykład
 
