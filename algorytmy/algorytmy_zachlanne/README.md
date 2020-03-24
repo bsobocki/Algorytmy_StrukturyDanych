@@ -13,8 +13,9 @@ Przykładem może być ***problem wydawania reszty***:
 
 
 ***Dane***:  
-    `c1`, `c2`, `c3`, ..., `ci`, ..., `cn` - liczby naturalne, nominały  
-    `R` - reszta, kwota do wydania przez automat  
+
+* `c1`, `c2`, `c3`, ..., `ci`, ..., `cn` - liczby naturalne, nominały  
+* `R` - reszta, kwota do wydania przez automat  
 
 ***Zadanie***:  
   1) czy `R` można przedstawić jako sumę (kombinację liniową)   
