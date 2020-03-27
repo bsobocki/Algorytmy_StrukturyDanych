@@ -5,4 +5,4 @@ Przegląd i opis algorytmów i struktur danych bazując na wykładzie prof. K. L
 (Instytut Informatyki - Wydział Matematyki i Informatyki - Uniwersytet Wrocławski)  
 
 A także na różnych źródłach znalezionych e internecie.  
-Zostaną wymienione w tym pliku, po wykorzystywanou ich wiedzy. 
+Zostaną wymienione w tych plikach, w których zostały wykorzystane z nich informacje. 
