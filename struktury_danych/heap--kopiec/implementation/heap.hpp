@@ -1,8 +1,9 @@
 /*
     Bartosz Sobocki 29.03.2020 r.
-    Implementation of a heap min with constant maximum size.
+    Implementation of a binary heap with constant maximum size.
 
-    All code 
+    All member functions bodies are here, because i don't know how to solve the problem, 
+    that the functionality of a template of a class cannot be implemented in .cpp file.
 */
 
 #ifndef HEAP_HPP
