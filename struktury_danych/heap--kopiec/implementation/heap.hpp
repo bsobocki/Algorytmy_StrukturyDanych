@@ -10,13 +10,13 @@
 #include <algorithm>
 #include "exceptions_heap.hpp"
 
-template <class T, unsigned int max_size >
-class bin_heap_min{
+template <class T, unsigned int max_size, class Compare = std::less<T> >
+class bin_heap{
     public:
-        bin_heap_min(): size(0) {}
+        bin_heap(): size(0) {}
 
         void insert(const T & elem){
-            if (size < max_size){
+            if ( size < max_size ){
                 data[size++] = elem;
                 go_up(size-1);
             }
@@ -49,12 +49,12 @@ class bin_heap_min{
         }
         
         T & min(){
-            if (size>0) return data[size-1];
+            if (size > 0) return data[size - 1];
             throw empty_heap();
         }
 
         void print_heap(){
-            for(int i=0; i<size; i++)
+            for(int i = 0; i < size; i++)
                 printf("%d  ", data[i]);
             printf("\n");
         }
@@ -95,7 +95,7 @@ class bin_heap_min{
         unsigned int right_child_index(unsigned int i) { return (i + 1) << 1; }
         unsigned int min_child_index(unsigned int i) { 
             if( is_node(left_child_index(i))){
-                if( is_node( right_child_index(i) ) &&  right_child(i) < left_child(i))
+                if( is_node( right_child_index(i) ) &&  compare(right_child(i), left_child(i)))
                     return right_child_index(i);
                 return left_child_index(i);
             }
@@ -128,7 +128,7 @@ class bin_heap_min{
         }
 
         void go_up(unsigned int i){
-            while ( is_node(i) && !is_root(i) && is_node(parent_index(i)) && data[i] < parent(i) ){
+            while ( is_node(i) && !is_root(i) && is_node(parent_index(i)) && compare(data[i], parent(i)) ){
                 std::swap(data[i], parent(i));
                 i = parent_index(i);
             }
@@ -136,7 +136,7 @@ class bin_heap_min{
         void go_down(unsigned int i){
             while( is_node(i) && has_child(i) ){ 
                 auto mci = min_child_index(i);
-                if( data[mci] < data[i] ){
+                if( compare(data[mci], data[i] )){
                     std::swap(data[mci], data[i]);
                     i = mci;
                 }
@@ -155,6 +155,7 @@ class bin_heap_min{
         }
 
         unsigned int size;
+        Compare compare;
         T data [max_size];
 
 };

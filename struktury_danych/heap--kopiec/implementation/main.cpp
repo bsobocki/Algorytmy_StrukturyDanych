@@ -6,7 +6,7 @@
 #include "exceptions_heap.hpp"
 
 int main(){
-    auto heap = std::make_unique<bin_heap_min<int, 15>> ();
+    auto heap = std::make_unique<bin_heap<int, 15, std::greater<int>>> ();
     std::default_random_engine generator;
     std::uniform_int_distribution<int> distribution(1,119);
     int dice_roll = distribution(generator);
