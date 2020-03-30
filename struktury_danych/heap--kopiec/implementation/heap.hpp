@@ -10,38 +10,51 @@
 #include <algorithm>
 #include "exceptions_heap.hpp"
 
-template <class T, unsigned int N >
+template <class T, unsigned int max_size >
 class bin_heap_min{
     public:
-        bin_heap_min(): count(0) {}
+        bin_heap_min(): size(0) {}
 
         void insert(const T & elem){
-            if (count < N){
-                data[count++] = elem;
-                go_up(count-1);
+            if (size < max_size){
+                data[size++] = elem;
+                go_up(size-1);
             }
             else throw full_heap();
         }
         
         T delete_min(){
-            if (count>0){
-                T temp = data[0];
-                data[0] = data[count-1];
+            if (size>0){
+                auto temp = data[0];
+                data[0] = data[size-1];
                 go_down(0);
-                count--;
+                size--;
+                return temp;
+            }
+            throw empty_heap();
+        }
+
+        // faster delete_min
+        T delete_min_hole(){
+            if (size>0){
+                auto temp = data[0];
+                auto hole_index = hole_down();
+                data[hole_index] = data[size-1];
+                if (hole_index != size-1)
+                    go_up(hole_index);
+                size--;
                 return temp;
             }
             throw empty_heap();
         }
         
         T & min(){
-            if (count>0) return data[count-1];
+            if (size>0) return data[size-1];
             throw empty_heap();
-        
         }
 
         void print_heap(){
-            for(int i=0; i<count; i++)
+            for(int i=0; i<size; i++)
                 printf("%d  ", data[i]);
             printf("\n");
         }
@@ -67,14 +80,14 @@ class bin_heap_min{
         }
 
         void print_heap_nodes(){
-            for(int i = 0; i<count; i++){
+            for(int i = 0; i<size; i++){
                 print_node(i);
             }
         }
 
     private:
         bool is_root(unsigned int i) { return i == 0; }
-        bool is_node(unsigned int i) { return i >= 0 && i < count; }
+        bool is_node(unsigned int i) { return i >= 0 && i < size; }
         bool has_child(unsigned int i) { return is_node(left_child_index(i)); }
 
         unsigned int parent_index(unsigned int i) { return ((i + 1) >> 1) - 1; }
@@ -115,12 +128,11 @@ class bin_heap_min{
         }
 
         void go_up(unsigned int i){
-            while ( !is_root(i) && is_node(i) && is_node(parent_index(i)) && data[i] < parent(i) ){
+            while ( is_node(i) && !is_root(i) && is_node(parent_index(i)) && data[i] < parent(i) ){
                 std::swap(data[i], parent(i));
                 i = parent_index(i);
             }
         }
-
         void go_down(unsigned int i){
             while( is_node(i) && has_child(i) ){ 
                 auto mci = min_child_index(i);
@@ -131,9 +143,19 @@ class bin_heap_min{
                 else break;
             }
         }
+        unsigned int hole_down(){
+            // at the beggining root is a hole
+            unsigned int index = 0;
+            while(has_child(index)){
+                auto mci = min_child_index(index);
+                std::swap(data[index], data[mci]);
+                index = mci; 
+            }
+            return index;
+        }
 
-        unsigned int count;
-        T data [N];
+        unsigned int size;
+        T data [max_size];
 
 };
 

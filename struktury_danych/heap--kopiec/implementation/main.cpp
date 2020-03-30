@@ -29,12 +29,12 @@ int main(){
     printf("\n\nheap: ");
     heap->print_heap();
 
-    printf("delete_min: %d\n", heap->delete_min());
+    printf("delete_min: %d\n", heap->delete_min_hole());
 
     printf("heap: ");
     heap->print_heap();
 
-    printf("delete_min: %d\n", heap->delete_min());
+    printf("delete_min: %d\n", heap->delete_min_hole());
 
     printf("heap: ");
     heap->print_heap();
