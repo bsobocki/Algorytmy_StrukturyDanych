@@ -1,5 +1,7 @@
 # Kopiec -- Heap
 
+Ten dokumaent jest również dostępny na [hackmd.io](https://hackmd.io/_76DTW1vRxewe-M3eBSjpA). Oczywiście oprawa graficzna tam jest o wiele lepsza :P
+
 ## Co znajdziemy w tym dokumencie
   - ***[Motywacja](#motywacja)***
     - ***[Przykład](#przykład)***
